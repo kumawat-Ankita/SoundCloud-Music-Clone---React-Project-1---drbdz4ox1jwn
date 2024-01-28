@@ -39,6 +39,7 @@ const Album = ({ searchInput }) => {
         }
     };
 
+
     const settings = {
         // dots: true,
         infinite: true,
@@ -46,9 +47,15 @@ const Album = ({ searchInput }) => {
         slidesToShow: 6,
         slidesToScroll: 6,
         responsive: [
-
             {
-                breakpoint: 768,
+                breakpoint: 1366,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 5
+                }
+            },
+            {
+                breakpoint: 1024,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3
@@ -57,8 +64,16 @@ const Album = ({ searchInput }) => {
             {
                 breakpoint: 576,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+
+            {
+                breakpoint: 280,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }
         ]
@@ -72,13 +87,13 @@ const Album = ({ searchInput }) => {
         <div>
             <div className='text-3xl font-bold m-6'>
                 {filteredMusicData.length > 0 && !loading && (
-                    <h1 className='pl-24 pr-32'>List of Albums</h1>
+                    <h1 className='pl-24 pr-32 text-3xl xsm:pl-9 xsm:pr-0 xsm:text-lg xlsm:text-sm xlsm:pl-0 xlsm:pr-0'>List of Albums</h1>
                 )}
                 {filteredMusicData.length === 0 && !loading && (
                     <p className="pl-24 pr-32">No data found.....</p>
                 )}
             </div>
-            <div className='pl-2 pr-2 md:pl-28 md:pr-28 pb-16'>
+            <div className="pl-2 pr-2 pb-16 xsm:pl-10 xsm:pr-10 xsm:pb-0 xlsm:pl-10 xlsm:pr-10 xlsm:pb-0">
                 {musicData.length > 0 && (
                     <Slider {...settings}>
                         {filteredMusicData.map((song) => (

@@ -71,7 +71,7 @@ const Library = () => {
         song.title.toLowerCase().includes(searchInput?.toLowerCase())
     );
     return (
-        <div className="bg-gray-800 text-white w-full h-screen">
+        <div className=" w-full h-screen">
             <Navbar searchInput={searchInput} setSearchInput={setSearchInput} />
             <div>
                 <h2 className="font-bold m-4 text-lg">My Favorite Songs</h2>

@@ -4,10 +4,15 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'sm': { 'min': '567px', 'max': '767px' },
-      }
+        xlsm: '200px',
+        xsm: '300px',
+        sm: '400px',
+        md: '768px',
+        lg: '1100px',
+        xl: '1400px',
+
+      },
     },
   },
   plugins: [],
-}
-
+};

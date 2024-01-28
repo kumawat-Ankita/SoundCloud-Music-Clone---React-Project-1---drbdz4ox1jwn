@@ -9,7 +9,7 @@ const Home = () => {
     const [searchInput, setSearchInput] = useState('');
 
     return (
-        <div className="bg-gray-800 text-white">
+        <div className="bg-gray-800 text-white" style={{ overflow: "hidden" }}>
             <Navbar searchInput={searchInput} setSearchInput={setSearchInput} />
             <Album searchInput={searchInput} />
             <MusicList searchInput={searchInput} />

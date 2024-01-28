@@ -17,7 +17,7 @@ const MusicCard = ({ song, setProductId, addRemoveSongFromFavorites, favorites }
                 className="cursor-pointer mx-auto w-32 md:w-48 h-auto"
             />
             <div className="mt-2 w-36 sm:w-48 break-words mx-auto ">
-                <div className="flex justify-around">
+                <div className="flex justify-around xlsm:items-center xlsm:flex-col">
                     <h2>{song.title}</h2>
                     <p className="p-1">
                         <button onClick={() => addRemoveSongFromFavorites(song._id, true)}>
@@ -30,7 +30,7 @@ const MusicCard = ({ song, setProductId, addRemoveSongFromFavorites, favorites }
                         </button>
                     </p>
                 </div>
-                <p className="text-gray-500">{song.artist[0].name}</p>
+                <p className="text-gray-500 pl-5">{song.artist[0].name}</p>
             </div>
         </div>
     );

@@ -40,34 +40,35 @@ const Navbar = ({ searchInput, setSearchInput = () => { } }) => {
     return (
         <>
             <div className="sticky top-0 z-50 bg-black text-white p-4">
-                <nav className="flex flex-col md:flex-row md:justify-between md:items-center px-4 sm:px-8 md:px-20">
-                    <div className="flex items-center mb-4 md:mb-0 gap-4 sm:gap-10">
+                <nav className="flex flex-col lg:flex-row   md:justify-between md:items-center px-4 sm:px-8 md:px-20">
+                    <div className="flex lg:flex-row items-center mb-4 md:mb-0 gap-4 sm:gap-10  xsm:flex-col xlsm:flex-col">
                         <Link to="/">
                             <span className="flex items-center">
                                 {" "}
                                 <img src={logo} alt="Logo" height={40} width={40} />
-                                <b className="text-xl sm:text-2xl">SOUNDCLOUD</b>
+                                <b className="text-xl ">SOUNDCLOUD</b>
                             </span>
                         </Link>
-
-                        <Link to="/">
-                            <span className="flex hover:text-blue-400">
-                                <FaHome className="m-1" />
-                                Home
-                            </span>
-                        </Link>
-                        <Link to="/feed">
-                            <span className="flex hover:text-blue-400">
-                                <TbMessageHeart className="m-1 " />
-                                Feed
-                            </span>
-                        </Link>
-                        <Link to="/library">
-                            <span className="flex hover:text-blue-400">
-                                <FaHeadphones className="m-1" />
-                                Library
-                            </span>
-                        </Link>
+                        <div className="flex flex-row xsm:gap-6 xlsm:gap-4">
+                            <Link to="/">
+                                <span className="flex hover:text-blue-400">
+                                    <FaHome className="m-1" />
+                                    Home
+                                </span>
+                            </Link>
+                            <Link to="/feed">
+                                <span className="flex hover:text-blue-400">
+                                    <TbMessageHeart className="m-1 " />
+                                    Feed
+                                </span>
+                            </Link>
+                            <Link to="/library">
+                                <span className="flex hover:text-blue-400">
+                                    <FaHeadphones className="m-1" />
+                                    Library
+                                </span>
+                            </Link>
+                        </div>
                     </div>
                     <div className="flex items-center ">
                         <input
@@ -79,14 +80,14 @@ const Navbar = ({ searchInput, setSearchInput = () => { } }) => {
                             }}
                             placeholder="Search"
                         />
-                        <button
+                        {/* <button
                             className="md:hidden ml-4 text-white font-bold"
                             onClick={() => toggleForm("login")}
                         >
                             <FaUser />
-                        </button>
+                        </button> */}
                     </div>
-                    <div className="hidden md:flex items-center gap-4 sm:gap-10">
+                    <div className=" flex xsm:flex-row items-center md:flex gap-4 xsm:gap-8 xlsm:gap-3">
                         <div>
                             <Link to="/tryNextPro">
                                 <span className="flex text-orange-600">
