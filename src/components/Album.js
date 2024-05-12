@@ -3,13 +3,14 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MusicId from '../context/UserContext';
-
+import { useNavigate } from 'react-router-dom';
 
 
 const Album = ({ searchInput }) => {
     const [musicData, setMusicData] = useState([]);
     const [loading, setLoading] = useState(true);
     const { setSongId } = useContext(MusicId);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchMusic();
@@ -32,6 +33,7 @@ const Album = ({ searchInput }) => {
             }
             const result = await response.json();
             setMusicData(result.data);
+            console.log("album result", result);
         } catch (error) {
             console.error('Error fetching music:', error.message);
         } finally {
@@ -83,6 +85,10 @@ const Album = ({ searchInput }) => {
         song.title.toLowerCase().includes(searchInput.toLowerCase())
     );
 
+    const handleImageClick = (audioUrl) => {
+        // Redirect to "coming soon" page when clicking on the song image
+        navigate('/comingsoon');
+    };
     return (
         <div>
             <div className='text-3xl font-bold m-6'>
@@ -103,7 +109,7 @@ const Album = ({ searchInput }) => {
                                         src={song.image}
                                         alt={song.title}
                                         className='cursor-pointer mx-auto w-32 md:w-48 h-auto'
-                                        onClick={() => setProductId(song.audio_url)}
+                                        onClick={() => handleImageClick(song.audio_url)}
                                     />
                                     <div className='mt-2 w-36 sm:w-48 break-words mx-auto '>
                                         <h2>{song.title}</h2>

@@ -11,9 +11,7 @@ import Upload from "./pages/upload";
 import TryNextPro from "./pages/tryNextPro";
 import ForArtist from "./pages/forArtist";
 import Error from "./pages/error";
-
-
-
+import ComingSoon from "./pages/comingsoon";
 
 export default function App() {
   return (
@@ -27,8 +25,7 @@ export default function App() {
         <Route path="/music" element={<MusicPlayer />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/error" element={<Error />} />
-
-
+        <Route path="/comingsoon" element={<ComingSoon />} />
       </Routes>
     </BrowserRouter >
   );

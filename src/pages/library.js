@@ -71,24 +71,26 @@ const Library = () => {
         song.title.toLowerCase().includes(searchInput?.toLowerCase())
     );
     return (
-        <div className=" w-full h-screen">
+        <div className=" w-full h-screen overflow-hidden">
             <Navbar searchInput={searchInput} setSearchInput={setSearchInput} />
             <div>
-                <h2 className="font-bold m-4 text-lg">My Favorite Songs</h2>
+                <h2 className="font-bold m-4 text-lg xlsm:text-center lg:text-start">My Favorite Songs</h2>
                 {isLoading ? (
                     <p>Loading...</p>
                 ) : (
-                    <ul className="flex flex-wrap">
+                    <ul className="flex flex-wrap xlsm:justify-center lg:justify-start xlsm:gap-7 lg:gap-0">
                         {filteredMusic.map((song) => (
-                            <li key={song.id} className="m-6">
-                                <img
-                                    src={song.thumbnail}
-                                    alt="image"
-                                    height={200}
-                                    width={200}
-                                    className="cursor-pointer break-words"
-                                />
-                                <div>{song.title} </div>
+                            <li key={song.id} className="lg:m-6 xlsm:m-0">
+                                <div className="flex justify-center items-center flex-col">
+                                    <img
+                                        src={song.thumbnail}
+                                        alt="image"
+                                        height={200}
+                                        width={200}
+                                        className='cursor-pointer mx-auto xlsm:ml-0 xlsm: w-32 md:w-48 h-auto'
+                                    />
+                                </div>
+                                <div className='mt-2 w-36 sm:w-48 break-words mx-auto '>{song.title} </div>
                                 <button
                                     onClick={() => removeSongFromFav(song._id)}
                                     className="border border-solid border-black rounded-md p-1 m-1 bg-white text-black font-bold"
