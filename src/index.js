@@ -10,6 +10,8 @@ import Home from "./components/Home";
 import Upload from "./pages/upload";
 import TryNextPro from "./pages/tryNextPro";
 import ForArtist from "./pages/forArtist";
+import Error from "./pages/error";
+
 
 
 
@@ -24,6 +26,7 @@ export default function App() {
         <Route path="/forArtist" element={<ForArtist />} />
         <Route path="/music" element={<MusicPlayer />} />
         <Route path="/upload" element={<Upload />} />
+        <Route path="/error" element={<Error />} />
 
 
       </Routes>

@@ -52,19 +52,17 @@ const Navbar = ({ searchInput, setSearchInput = () => { } }) => {
                         <div className="flex flex-row xsm:gap-6 xlsm:gap-4">
                             <Link to="/">
                                 <span className="flex hover:text-blue-400">
-                                    <FaHome className="m-1" />
+
                                     Home
                                 </span>
                             </Link>
                             <Link to="/feed">
                                 <span className="flex hover:text-blue-400">
-                                    <TbMessageHeart className="m-1 " />
                                     Feed
                                 </span>
                             </Link>
                             <Link to="/library">
                                 <span className="flex hover:text-blue-400">
-                                    <FaHeadphones className="m-1" />
                                     Library
                                 </span>
                             </Link>
@@ -72,7 +70,7 @@ const Navbar = ({ searchInput, setSearchInput = () => { } }) => {
                     </div>
                     <div className="flex items-center ">
                         <input
-                            className="border rounded w-96 text-black p-1 "
+                            className="border rounded w-96 text-black p-1 ml-5 mr-5 "
                             type="text"
                             value={searchInput}
                             onChange={(e) => {
@@ -98,7 +96,7 @@ const Navbar = ({ searchInput, setSearchInput = () => { } }) => {
                         <div>
                             <Link to="/forArtist">
                                 <span className="flex  text-white hover:text-blue-400">
-                                    For Artist
+                                    For Artists
                                 </span>
                             </Link>
                         </div>

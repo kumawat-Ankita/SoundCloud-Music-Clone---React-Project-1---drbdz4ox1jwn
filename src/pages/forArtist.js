@@ -8,7 +8,7 @@ export default function ForArtist() {
             <div className="p-4">
                 <img src={logo} height={100} width={200} />
             </div>
-            <div className="flex xlsm:flex-col">
+            <div className="flex lg:flex-row xlsm:flex-col">
                 <ul className="font-mono text-gray-600 p-12 flex flex-wrap flex-col gap-4 xlsm:text-sm">
                     <li className="font-bold text-black">OVERVIEW</li>
                     <li >TRACKS</li>
@@ -26,7 +26,7 @@ export default function ForArtist() {
                     <div className="pt-14 pl-11 flex xlsm:flex-col">
                         <h1 className="text-3xl font-semibold">Streams</h1>
                         <div className="bg-gray-100 p-4 m-4 flex">
-                            <div className="p-4">
+                            <div className="p-4 rounded-full">
                                 <img src={logo1} height={200} width={200} />
                             </div>
                             <div className="p-4">
